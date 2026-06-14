@@ -49,20 +49,18 @@
 				(hide yes)
 			)
 		)
-		(symbol "oled_display_module_0_1"
+		(symbol "oled_display_module_1_1"
 			(rectangle
 				(start -12.7 7.62)
 				(end 38.1 -15.24)
 				(stroke
 					(width 0)
-					(type default)
+					(type solid)
 				)
 				(fill
-					(type none)
+					(type background)
 				)
 			)
-		)
-		(symbol "oled_display_module_1_1"
 			(pin power_in line
 				(at -11.43 10.16 270)
 				(length 2.54)

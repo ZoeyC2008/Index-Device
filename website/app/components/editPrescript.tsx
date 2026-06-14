@@ -1,5 +1,7 @@
+import type {Prescript} from "~/types/prescript";
+
 type paperSlipProps={
-    text: string,
+    prescript: Prescript
 }
 
 export default function PaperSlip() {
@@ -15,22 +17,38 @@ export default function PaperSlip() {
 
             <div className={"w-full h-full object-contain"}>
                 <img
-                    src="/images/paperSlipLight.svg"
+                    src="/images/editPrescriptLight.svg"
                     alt="paper slip"
                     className="block dark:hidden"
                 />
 
                 <img
-                    src="/images/paperSlipDark.svg"
+                    src="/images/editPrescriptDark.svg"
                     alt="paper slip"
                     className="hidden dark:block"
                 />
             </div>
 
+            <div className={"absolute insert-0 flex flex-col"}>
+                <div className={"w-full h-full object-contain align-right"}>
+                    <img
+                        src="/images/editPrescriptLight.svg"
+                        alt="paper slip"
+                        className="block dark:hidden"
+                    />
 
-            <div className={"absolute insert-0 flex items-center justify-center"}>
-                <p>test</p>
+                    <img
+                        src="/images/editPrescriptDark.svg"
+                        alt="paper slip"
+                        className="hidden dark:block"
+                    />
+                </div>
+
+                <div>
+                    text
+                </div>
             </div>
+
         </div>
     )
 }
