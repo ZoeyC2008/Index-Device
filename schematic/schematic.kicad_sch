@@ -2405,74 +2405,6 @@
 		(uuid "ff2eb18a-c0f0-4fcf-bae4-add50052a41c")
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 189.23 48.26 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "04c40547-b385-4a2a-9364-52a6decf7a5e")
-		(property "Reference" "SW1"
-			(at 189.23 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_Push"
-			(at 189.23 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 189.23 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 189.23 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 189.23 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5aac9cd6-cf1e-42e4-be29-208a0ec759d0")
-		)
-		(pin "2"
-			(uuid "0ee10b5c-7c8b-4d45-ada3-1b14b3665a17")
-		)
-		(instances
-			(project ""
-				(path "/3a91534b-bac7-4c1d-abc4-f3e0f0feb066"
-					(reference "SW1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 256.54 137.16 0)
 		(unit 1)
@@ -2533,6 +2465,74 @@
 			(project ""
 				(path "/3a91534b-bac7-4c1d-abc4-f3e0f0feb066"
 					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 189.23 48.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "20dde74b-1aaa-4140-ae42-4d022607d141")
+		(property "Reference" "SW1"
+			(at 189.23 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 189.23 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 189.23 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 189.23 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 189.23 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "2d3a930b-35c5-4f17-b539-85505cbbaa1c")
+		)
+		(pin "1"
+			(uuid "083db9a7-607a-49fb-bc5b-4d0ace28648a")
+		)
+		(instances
+			(project ""
+				(path "/3a91534b-bac7-4c1d-abc4-f3e0f0feb066"
+					(reference "SW1")
 					(unit 1)
 				)
 			)

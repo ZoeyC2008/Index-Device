@@ -455,7 +455,7 @@
 	(footprint "Module:Arduino_Nano"
 		(layer "F.Cu")
 		(uuid "9e3be54e-9b0a-4395-8333-01bf15e25424")
-		(at 185.5 54.84)
+		(at 186.26 57.98)
 		(descr "Arduino Nano, http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf")
 		(tags "Arduino Nano")
 		(property "Reference" "A1"
@@ -1186,6 +1186,17 @@
 				(xyz 0 0 0)
 			)
 		)
+	)
+	(gr_rect
+		(start 52 39.5)
+		(end 111.5 161)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Cu")
+		(uuid "2fe1caf2-c65c-4dc3-8705-56255c97e6c9")
 	)
 	(embedded_fonts no)
 )
