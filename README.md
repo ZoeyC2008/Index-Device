@@ -8,9 +8,55 @@ Use case: I suppose it can be a worse version of the reminders people set on the
 
 ***
 
+***
+
 ## Zine
 
-![Index device zine page](image.png)
+![Index device zine page](docs/zine.png)
+
+(The zine can be found under the zine folder.)
+
+## PCB
+
+![image of the pdf of the PCB](docs/schematic.png)
+
+(The pdf of the PCB is under CAD models/drawings, while the .kicad_pcb is in the schematic folder)
+
+## Code logic
+
+- Semi-randomly send the messages of cryptic nature while beeping
+- A short press of the button tells the device that the prescript has been received and displays the given prescript
+- A long press of the button tells the device that the prescript has been cleared, dismissing the current prescript, and showing a clear animation
+
+## CAD
+
+![image of the CAD](docs/cad.png)
+
+CAD! The CAD (and the project in general) was made to resemble this:
+
+![alt text](docs/device.png)
+
+***
+
+***
+
+Trying to be thorough, so I'm just going to word for word answer teh questions in Fallout docs:
+
+✓ Short description of what your project is! Highlight what makes it unique
+
+A beeper that sends cryptic instructions (emphasis on cryptic).
+
+***
+
+✓ How do you use it? Be detailed! Others can’t read your mind.
+
+The device will send the instructions randomly, short press the button to show you've received it, and long press to say you've cleared it.
+
+***
+
+✓ Why did you make it? Be personal! Are you solving a problem? Trying to make something smaller than previously thought possible?
+
+I made this because I'm hyperfixating on Project Moon and I think the Index is a really cool faction! (By the will of the City!)
 
 ***
 
