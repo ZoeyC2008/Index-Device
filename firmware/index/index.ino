@@ -11,16 +11,14 @@ bool isExecuting = false;
 
 bool isReceived = true;
 
-unsigned long currentMillis, previousMillisBeeped, previousMillisPressed, previousMillisReceived = 0;
+unsigned long currentMillis, previousMillisBeeped, previousMillisPressed, previousMillisReceived, previousMillisReleased, previousMillisDelivered = 0;
 const int BEEP_INTERVAL = 18000; //I'm pretty sure that this is three minutes, I think?
 
 byte lastButtonState = HIGH;  // set default to not active
 
-unsigned long previousMillisPressed;
-unsigned long previousMillisReleased;
 const unsigned long holdInterval = 200;
 
-
+unsigned longnextPrescriptMillis = 0;
 
 Adafruit_SSD1305 display(128, 64)
 
@@ -45,7 +43,11 @@ void setup(){
 
   pinMode(BUTTON, INPUT_PULLUP);
 
-  pinMode(BUZZER, OUTPUT)
+  pinMode(BUZZER, OUTPUT);
+
+  display.cp437(true);
+
+  nextPrescriptMillis = random(300000, 7200000);//in theory, from five minutes to two hours, will probably need to change this around at some point to better reflect that 
 }
 
 void loop(){
@@ -80,6 +82,17 @@ void loop(){
     if (currentMillis - previousMillisBeeped > BEEP_INTERVAL){
       beep();
       previousMillisBeeped = currentMillis;
+    }
+  }
+
+  if (!isExecuting){
+    currentMillis = millis();
+
+    if (currentMillis - previousMillisDelivered > nextPrescriptMillis){
+      nextPrescriptMillis = random(300000, 7200000);
+      previousMillisDelivered = currentMillis;
+
+      deliver();
     }
   }
 }
@@ -133,7 +146,12 @@ void clear(){
 
 //display prescript
 void display(String message){
+  display.setCursor(int16_t x0, int16_t y0);
+  display.setTextColor(WHITE, BLACK);
+  displaysetTextSize(uint8_t 2);
+  display.setTextWrap(boolean w);
 
+  display.print(message);
 }
 
 void beep(){
