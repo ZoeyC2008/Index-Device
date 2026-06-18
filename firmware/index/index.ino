@@ -1,3 +1,6 @@
+#include <Adafruit_GFX.h>    // Core graphics library
+#include <Adafruit_SSD1305.h> // Hardware-specific library for SSD1305
+
 String[] prescripts = ["Slam down with weight, topple the body", "Lay vertical the end, insert up the wick", "Lay the blade on its side, slice like a severed breath", "Swing to fell, have it meet the ground", "Aim toward a point, let it echo within", "Carve at a low slant, peel what remains", "Destroy the sound, crush flat the thought", "Stab the silence's heart, penetrate the memory", "With tempered secret, cut the form", ];
 
 int prescriptsLen = 8;
@@ -7,6 +10,17 @@ String currentprescript = "";
 bool isExecuting = false;
 
 bool isReceived = true;
+
+unsigned long currentMillis, previousMillisBeeped, previousMillisPressed, previousMillisReceived = 0;
+const int BEEP_INTERVAL = 18000; //I'm pretty sure that this is three minutes, I think?
+
+byte lastButtonState = HIGH;  // set default to not active
+
+unsigned long previousMillisPressed;
+unsigned long previousMillisReleased;
+const unsigned long holdInterval = 200;
+
+
 
 Adafruit_SSD1305 display(128, 64)
 
@@ -29,7 +43,7 @@ void setup(){
   pinMode(OLED_RESET, OUTPUT);
   pinMode(OLED_CD, OUTPUT);
 
-  pinMode(BUTTON, INPUT);
+  pinMode(BUTTON, INPUT_PULLUP);
 
   pinMode(BUZZER, OUTPUT)
 }
@@ -40,6 +54,34 @@ void loop(){
   //on long press, call clear
 
   //at basically any random-ish time deliver a prescript, but deliver already accounts for that
+
+  
+  byte buttonState = (byte) digitalRead( pinButton);
+
+  if (buttonState != lastButtonState){
+    if (buttonState == LOW){
+      previousMillisPressed = millis();
+    }
+
+    if (buttonState == HIGH){
+      currentMillis = millis();
+      if (currentMillis - previousMillisPressed > holdInterval){
+        clear();
+      } else {
+        onClick();
+      }
+    }
+  }
+
+  //a way for the device to keep beeping if you ignore it? (we don't have any confimation for or aginst this headcanon, b/c rien and sora are obeidient cultists)
+  if (!isReceived){;
+    currentMillis = millis()
+
+    if (currentMillis - previousMillisBeeped > BEEP_INTERVAL){
+      beep();
+      previousMillisBeeped = currentMillis;
+    }
+  }
 }
 
 
@@ -95,6 +137,7 @@ void display(String message){
 }
 
 void beep(){
-
+  //in theory, this plays a C4 note for a half note
+  tone(BUZZER, 262, 2);
 }
 
